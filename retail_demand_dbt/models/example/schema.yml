@@ -1,0 +1,49 @@
+
+version: 2
+
+models:
+  - name: stg_calendar
+    columns:
+      - name: day_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_sell_prices
+    columns:
+      - name: store_id
+        data_tests:
+          - not_null
+      - name: item_id
+        data_tests:
+          - not_null
+      - name: week_id
+        data_tests:
+          - not_null
+
+  - name: fct_weekly_sales
+    columns:
+      - name: item_id
+        data_tests:
+          - not_null
+      - name: store_id
+        data_tests:
+          - not_null
+      - name: week_id
+        data_tests:
+          - not_null
+
+  - name: fct_monthly_sales
+    columns:
+      - name: item_id
+        data_tests:
+          - not_null
+      - name: store_id
+        data_tests:
+          - not_null
+      - name: sales_year
+        data_tests:
+          - not_null
+      - name: sales_month
+        data_tests:
+          - not_null
